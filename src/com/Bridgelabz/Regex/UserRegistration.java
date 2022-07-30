@@ -9,11 +9,21 @@ public class UserRegistration {
         System.out.println("Enter your First Name.");
         Scanner sc1 = new Scanner(System.in);
         String firstName = sc1.next();
+        System.out.println("Enter your Last Name.");
+        String lastName = sc1.next();
         System.out.println(validateFirstName(firstName));
+        System.out.println(validateLastName(lastName));
     }
-    private static boolean validateFirstName(String firstName){
-        Pattern pattern = Pattern.compile("[A-Z]{1}+[a-z]{2,2}");
+
+    private static boolean validateFirstName(String firstName) {
+        Pattern pattern = Pattern.compile("[A-Z]{1}+[a-z]{2,}");
         Matcher matcher = pattern.matcher(firstName);
+        return matcher.matches();
+    }
+
+    private static boolean validateLastName(String lastName) {
+        Pattern pattern = Pattern.compile("[A-Z]{1}+[a-z]{2,}");
+        Matcher matcher = pattern.matcher(lastName);
         return matcher.matches();
     }
 }
