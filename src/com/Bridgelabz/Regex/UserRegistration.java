@@ -13,9 +13,12 @@ public class UserRegistration {
         String lastName = sc1.next();
         System.out.println("Enter your E-mail ID in the format of i.e abc.xyz@bl.co.in.");
         String email = sc1.next();
+        System.out.println("Enter your Mobile Number. Starting with 2 digit country code and then 10 digit number.");
+        String phoneNumber = sc1.next();
         System.out.println(validateFirstName(firstName));
         System.out.println(validateLastName(lastName));
         System.out.println(validateEmail(email));
+        System.out.println(validatePhoneNumber(phoneNumber));
 
     }
 
@@ -34,6 +37,12 @@ public class UserRegistration {
     private static boolean validateEmail(String email) {
         Pattern pattern = Pattern.compile("^[a-zA-Z]+[.][a-zA-Z]+@+[a-zA-Z]+[.][a-zA-Z]+[.][a-zA-Z]*$");
         Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    private static boolean validatePhoneNumber(String phoneNumber) {
+        Pattern pattern = Pattern.compile("[0-9]{2}+[-]+[0-9]{10}");
+        Matcher matcher = pattern.matcher(phoneNumber);
         return matcher.matches();
     }
 }
