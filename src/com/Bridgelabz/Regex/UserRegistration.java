@@ -22,7 +22,7 @@ public class UserRegistration {
         System.out.println(validateEmail(email));
         System.out.println(validatePhoneNumber(phoneNumber));
         System.out.println(validatePassword(password));
-        System.out.println("\n User Details----------------------\n");
+        System.out.println("\n User Details----------------------");
         System.out.print("\n Full Name :- "+firstName + " ");
         System.out.print(lastName+",");
         System.out.print("\n Email :- "+email+",");
@@ -56,7 +56,7 @@ public class UserRegistration {
     }
 
     private static boolean validatePassword(String password) {
-        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$");
+        Pattern pattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*].{8,}$");
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
