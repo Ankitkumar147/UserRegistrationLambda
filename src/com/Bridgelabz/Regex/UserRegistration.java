@@ -15,11 +15,18 @@ public class UserRegistration {
         String email = sc1.next();
         System.out.println("Enter your Mobile Number. Starting with 2 digit country code and then 10 digit number.");
         String phoneNumber = sc1.next();
+        System.out.println("Enter the password Minimum 8 Characters.");
+        String password = sc1.next();
         System.out.println(validateFirstName(firstName));
         System.out.println(validateLastName(lastName));
         System.out.println(validateEmail(email));
         System.out.println(validatePhoneNumber(phoneNumber));
-
+        System.out.println(validatePassword(password));
+        System.out.print(firstName + " ");
+        System.out.print(lastName+",");
+        System.out.print(email+",");
+        System.out.print(phoneNumber+",");
+        System.out.print(password+".");
     }
 
     private static boolean validateFirstName(String firstName) {
@@ -43,6 +50,12 @@ public class UserRegistration {
     private static boolean validatePhoneNumber(String phoneNumber) {
         Pattern pattern = Pattern.compile("[0-9]{2}+[-]+[0-9]{10}");
         Matcher matcher = pattern.matcher(phoneNumber);
+        return matcher.matches();
+    }
+
+    private static boolean validatePassword(String password) {
+        Pattern pattern = Pattern.compile("[a-zA-Z0-9]{8,}");
+        Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
 }
