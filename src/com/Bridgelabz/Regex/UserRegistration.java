@@ -11,8 +11,12 @@ public class UserRegistration {
         String firstName = sc1.next();
         System.out.println("Enter your Last Name.");
         String lastName = sc1.next();
+        System.out.println("Enter your E-mail ID in the format of i.e abc.xyz@bl.co.in.");
+        String email = sc1.next();
         System.out.println(validateFirstName(firstName));
         System.out.println(validateLastName(lastName));
+        System.out.println(validateEmail(email));
+
     }
 
     private static boolean validateFirstName(String firstName) {
@@ -24,6 +28,12 @@ public class UserRegistration {
     private static boolean validateLastName(String lastName) {
         Pattern pattern = Pattern.compile("[A-Z]{1}+[a-z]{2,}");
         Matcher matcher = pattern.matcher(lastName);
+        return matcher.matches();
+    }
+
+    private static boolean validateEmail(String email) {
+        Pattern pattern = Pattern.compile("^[a-zA-Z]+[.][a-zA-Z]+@+[a-zA-Z]+[.][a-zA-Z]+[.][a-zA-Z]*$");
+        Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
 }
