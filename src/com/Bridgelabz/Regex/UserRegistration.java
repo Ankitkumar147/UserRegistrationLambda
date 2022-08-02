@@ -3,9 +3,12 @@ package com.Bridgelabz.Regex;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 public class UserRegistration {
 
+
     public static void main(String[] args) {
+        System.out.println("Welcome to the User Registration Program.");
         System.out.println("Enter your First Name.");
         Scanner sc1 = new Scanner(System.in);
         String firstName = sc1.next();
@@ -32,13 +35,13 @@ public class UserRegistration {
     }
 
     private static boolean validateFirstName(String firstName) {
-        Pattern pattern = Pattern.compile("[A-Z]{1}+[a-z]{2,}");
+        Pattern pattern = Pattern.compile("[?A-Z]+[a-z]{2,}");
         Matcher matcher = pattern.matcher(firstName);
         return matcher.matches();
     }
 
-    private static boolean validateLastName(String lastName) {
-        Pattern pattern = Pattern.compile("[A-Z]{1}+[a-z]{2,}");
+   private static boolean validateLastName(String lastName) {
+        Pattern pattern = Pattern.compile("[?A-Z]+[a-z]{2,}");
         Matcher matcher = pattern.matcher(lastName);
         return matcher.matches();
     }
@@ -56,7 +59,7 @@ public class UserRegistration {
     }
 
     private static boolean validatePassword(String password) {
-        Pattern pattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*].{8,}$");
+        Pattern pattern = Pattern.compile("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
