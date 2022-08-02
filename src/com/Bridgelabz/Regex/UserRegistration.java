@@ -47,7 +47,7 @@ public class UserRegistration {
     }
 
     private static boolean validateEmail(String email) {
-        Pattern pattern = Pattern.compile("^[a-zA-Z]+[.][a-zA-Z]+@+[a-zA-Z]+[.][a-zA-Z]+[.][a-zA-Z]*$");
+        Pattern pattern = Pattern.compile("^[a-zA-Z]+[.][a-zA-Z]+@+[a-zA-Z]+[.][a-zA-Z][*.][*a-zA-Z]$");
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
