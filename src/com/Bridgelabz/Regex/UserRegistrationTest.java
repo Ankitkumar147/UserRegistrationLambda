@@ -22,7 +22,7 @@ public class UserRegistrationTest {
 
     @Test
     public void validateFirstNameIsCapital() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Method method = UserRegistration.class.getDeclaredMethod("validateFirstNameIsCapital",String.class );
+        Method method = UserRegistration.class.getDeclaredMethod("validateFirstName",String.class );
         method.setAccessible(true);
         method.invoke(userRegistration,"Ankit");
     }
@@ -39,4 +39,3 @@ public class UserRegistrationTest {
         method.invoke(userRegistration,"918708893545");
     }
 }
-
