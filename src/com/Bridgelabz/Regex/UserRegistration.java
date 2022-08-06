@@ -5,6 +5,10 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+interface checker {
+
+}
+
 public class UserRegistration {
 
 
@@ -36,7 +40,7 @@ public class UserRegistration {
     }
 
     private static boolean validateFirstName(String firstName) {
-        Pattern pattern = Pattern.compile("[?A-Z]+[a-z]{2,}");
+        Pattern pattern = Pattern.compile("[?A-Z][a-z]{2,}");
         if ( firstName == null){
             return false;
         }

@@ -36,6 +36,6 @@ public class UserRegistrationTest {
     public void validatePhoneNumber() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Method method = UserRegistration.class.getDeclaredMethod("validatePhoneNumber",String.class);
         method.setAccessible(true);
-        method.invoke(userRegistration,"918708893545");
+        method.invoke(userRegistration,"91-8708893545");
     }
 }
